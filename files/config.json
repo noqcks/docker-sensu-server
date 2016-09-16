@@ -16,6 +16,6 @@
     "bind": "0.0.0.0",
     "port": 4567,
     "user":"sensu",
-    "password":"sensu"
+    "password":"badpass"
   }
 }

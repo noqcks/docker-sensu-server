@@ -27,7 +27,16 @@ docker-compose up -d
 
 ### uchiwa
 
-* http://your-server:3000/
+* `http://your-server:3000/`
+
+The default user/pass are admin:changeme. It is _highly recommended_ that you change this password in `files/uchiwa.json`
+
+### sensu API
+
+* `http://your-server:4567/`
+
+The default user/pass are admin:badpass. It is _highly recommended_ that you change this password in `files/uchiwa.json` and `files/config.json`
+
 
 ## License
 

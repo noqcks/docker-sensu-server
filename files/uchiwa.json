@@ -6,14 +6,14 @@
       "ssl": false,
       "port": 4567,
       "user": "sensu",
-      "pass": "sensu",
+      "pass": "badpass",
       "path": "",
       "timeout": 5000
     }
   ],
   "uchiwa": {
     "user": "admin",
-    "pass": "admin",
+    "pass": "changeme",
     "port": 3000,
     "stats": 10,
     "refresh": 10000
