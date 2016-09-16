@@ -1,0 +1,35 @@
+version: '2'
+services:
+  redis:
+    image: redis:alpine
+    restart: unless-stopped
+    command: redis-server --appendonly yes
+    ports:
+      - 6379:6379
+    networks:
+      - sensu_net
+  rabbitmq:
+    image: rabbitmq
+    hostname: rabbitmq
+    restart: unless-stopped
+    env_file:
+      - files/rabbitmq.env
+    ports:
+      - 5672:5672   # daemon API
+      - 15672:15672 # management API
+    networks:
+      - sensu_net
+  sensu:
+    build: .
+    image: sensu
+    restart: unless-stopped
+    depends_on:
+      - redis
+      - rabbitmq
+    ports:
+      - 4567:4567
+      - 3000:3000
+    networks:
+      - sensu_net
+networks:
+  sensu_net:
